@@ -13,6 +13,7 @@
 		88A563EC23C07EE700829393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88A563EB23C07EE700829393 /* Assets.xcassets */; };
 		88A563EF23C07EE700829393 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88A563ED23C07EE700829393 /* LaunchScreen.storyboard */; };
 		88C226A623C47D400052D95E /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C226A523C47D400052D95E /* GFButton.swift */; };
+		88C226A823C481770052D95E /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C226A723C481770052D95E /* GFTextField.swift */; };
 		88FDBA8223C09239003219BE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FDBA8123C09239003219BE /* SearchViewController.swift */; };
 		88FDBA8423C0928D003219BE /* FavoritesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FDBA8323C0928D003219BE /* FavoritesListViewController.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +27,7 @@
 		88A563EE23C07EE700829393 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88A563F023C07EE700829393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88C226A523C47D400052D95E /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
+		88C226A723C481770052D95E /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		88FDBA8123C09239003219BE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		88FDBA8323C0928D003219BE /* FavoritesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 				88FDBA8123C09239003219BE /* SearchViewController.swift */,
 				88FDBA8323C0928D003219BE /* FavoritesListViewController.swift */,
 				88C226A523C47D400052D95E /* GFButton.swift */,
+				88C226A723C481770052D95E /* GFTextField.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				88A563E323C07EE600829393 /* AppDelegate.swift in Sources */,
 				88FDBA8223C09239003219BE /* SearchViewController.swift in Sources */,
 				88A563E523C07EE600829393 /* SceneDelegate.swift in Sources */,
+				88C226A823C481770052D95E /* GFTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
