@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		888F29F023C567110018170E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29EF23C567110018170E /* Follower.swift */; };
 		888F29F223C567CE0018170E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F123C567CE0018170E /* User.swift */; };
+		888F29F523C593740018170E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F423C593740018170E /* NetworkManager.swift */; };
 		88A563E323C07EE600829393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A563E223C07EE600829393 /* AppDelegate.swift */; };
 		88A563E523C07EE600829393 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A563E423C07EE600829393 /* SceneDelegate.swift */; };
 		88A563E723C07EE600829393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A563E623C07EE600829393 /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		888F29EF23C567110018170E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		888F29F123C567CE0018170E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		888F29F423C593740018170E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		88A563DF23C07EE600829393 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A563E223C07EE600829393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A563E423C07EE600829393 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		888F29F323C5935B0018170E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				888F29F423C593740018170E /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		88A563D623C07EE600829393 = {
 			isa = PBXGroup;
 			children = (
@@ -88,12 +98,12 @@
 		88A563E123C07EE600829393 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				888F29F323C5935B0018170E /* Managers */,
 				888F29EE23C566F90018170E /* Model */,
-				88DC268423C5172B00C1FDDF /* Supporting Files */,
 				88C226AB23C492820052D95E /* Extensions */,
 				88DC268323C5169800C1FDDF /* Custom Views */,
 				88DC268223C5166200C1FDDF /* Screens */,
-				88A563F023C07EE700829393 /* Info.plist */,
+				88DC268423C5172B00C1FDDF /* Supporting Files */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -133,6 +143,7 @@
 		88DC268423C5172B00C1FDDF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				88A563F023C07EE700829393 /* Info.plist */,
 				88A563E223C07EE600829393 /* AppDelegate.swift */,
 				88A563E423C07EE600829393 /* SceneDelegate.swift */,
 				88A563E623C07EE600829393 /* ViewController.swift */,
@@ -216,6 +227,7 @@
 				888F29F023C567110018170E /* Follower.swift in Sources */,
 				88FDBA8423C0928D003219BE /* FavoritesListViewController.swift in Sources */,
 				88BA24A323C4CFB900FB9F9C /* UIViewController+Ext.swift in Sources */,
+				888F29F523C593740018170E /* NetworkManager.swift in Sources */,
 				88A563E723C07EE600829393 /* ViewController.swift in Sources */,
 				88C226A623C47D400052D95E /* GFButton.swift in Sources */,
 				88DC268623C518C900C1FDDF /* GFAlertContanierView.swift in Sources */,
@@ -363,7 +375,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GHFollowers/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GHFollowers/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GHFollowers/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GHFollowers/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
