@@ -33,7 +33,7 @@ class FollowerListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setToolbarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     private func configureViewController() {
