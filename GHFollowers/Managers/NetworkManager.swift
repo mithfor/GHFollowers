@@ -6,12 +6,12 @@
 //  Copyright © 2020 Mithfor. All rights reserved.
 
 
-import Foundation
+import UIKit
 
 class NetworkManager {
     static let shared = NetworkManager()
-    
-    let baseURL: String = "https://api.github.com/users/"
+    let cache = NSCache<NSString, UIImage>()
+    private let baseURL: String = "https://api.github.com/users/"
     
     private init() {}
     
