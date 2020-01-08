@@ -9,11 +9,11 @@
 import Foundation
 
 struct Follower: Codable {
-    var login: String
+    var lo1gin: String
     var avatarUrl: String
     
     enum CodingKeys: String, CodingKey {
-        case login
+        case lo1gin
         case avatarUrl = "avatar_url"
     }
 }

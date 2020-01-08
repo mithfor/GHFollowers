@@ -10,6 +10,7 @@
 		888F29F023C567110018170E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29EF23C567110018170E /* Follower.swift */; };
 		888F29F223C567CE0018170E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F123C567CE0018170E /* User.swift */; };
 		888F29F523C593740018170E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F423C593740018170E /* NetworkManager.swift */; };
+		888F29F823C5A61B0018170E /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F723C5A61B0018170E /* ErrorMessage.swift */; };
 		88A563E323C07EE600829393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A563E223C07EE600829393 /* AppDelegate.swift */; };
 		88A563E523C07EE600829393 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A563E423C07EE600829393 /* SceneDelegate.swift */; };
 		88A563E723C07EE600829393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A563E623C07EE600829393 /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 		888F29EF23C567110018170E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		888F29F123C567CE0018170E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		888F29F423C593740018170E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		888F29F723C5A61B0018170E /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		88A563DF23C07EE600829393 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A563E223C07EE600829393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A563E423C07EE600829393 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		888F29F623C5A6070018170E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				888F29F723C5A61B0018170E /* ErrorMessage.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		88A563D623C07EE600829393 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 		88A563E123C07EE600829393 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				888F29F623C5A6070018170E /* Utilities */,
 				888F29F323C5935B0018170E /* Managers */,
 				888F29EE23C566F90018170E /* Model */,
 				88C226AB23C492820052D95E /* Extensions */,
@@ -224,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				88C226AE23C496F30052D95E /* FollowerListViewController.swift in Sources */,
+				888F29F823C5A61B0018170E /* ErrorMessage.swift in Sources */,
 				888F29F023C567110018170E /* Follower.swift in Sources */,
 				88FDBA8423C0928D003219BE /* FavoritesListViewController.swift in Sources */,
 				88BA24A323C4CFB900FB9F9C /* UIViewController+Ext.swift in Sources */,
