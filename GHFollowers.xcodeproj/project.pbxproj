@@ -11,6 +11,8 @@
 		888F29F223C567CE0018170E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F123C567CE0018170E /* User.swift */; };
 		888F29F523C593740018170E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F423C593740018170E /* NetworkManager.swift */; };
 		888F29F823C5A61B0018170E /* GFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F723C5A61B0018170E /* GFError.swift */; };
+		888F29FB23C5AE030018170E /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29FA23C5AE030018170E /* FollowerCell.swift */; };
+		888F29FD23C5AE850018170E /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29FC23C5AE850018170E /* GFAvatarImageView.swift */; };
 		88A563E323C07EE600829393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A563E223C07EE600829393 /* AppDelegate.swift */; };
 		88A563E523C07EE600829393 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A563E423C07EE600829393 /* SceneDelegate.swift */; };
 		88A563E723C07EE600829393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A563E623C07EE600829393 /* ViewController.swift */; };
@@ -33,6 +35,8 @@
 		888F29F123C567CE0018170E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		888F29F423C593740018170E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		888F29F723C5A61B0018170E /* GFError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFError.swift; sourceTree = "<group>"; };
+		888F29FA23C5AE030018170E /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
+		888F29FC23C5AE850018170E /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		88A563DF23C07EE600829393 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A563E223C07EE600829393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88A563E423C07EE600829393 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +93,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		888F29F923C5ADD00018170E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				888F29FA23C5AE030018170E /* FollowerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		88A563D623C07EE600829393 = {
 			isa = PBXGroup;
 			children = (
@@ -141,12 +153,14 @@
 		88DC268323C5169800C1FDDF /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				888F29F923C5ADD00018170E /* Cells */,
 				88C226A523C47D400052D95E /* GFButton.swift */,
 				88C226A723C481770052D95E /* GFTextField.swift */,
 				88BA249C23C4C1E000FB9F9C /* GFTitleLabel.swift */,
 				88BA249E23C4C3BC00FB9F9C /* GFBodyLabel.swift */,
 				88BA24A023C4C49C00FB9F9C /* GFAlertViewController.swift */,
 				88DC268523C518C900C1FDDF /* GFAlertContanierView.swift */,
+				888F29FC23C5AE850018170E /* GFAvatarImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -236,6 +250,7 @@
 			files = (
 				88C226AE23C496F30052D95E /* FollowerListViewController.swift in Sources */,
 				888F29F823C5A61B0018170E /* GFError.swift in Sources */,
+				888F29FD23C5AE850018170E /* GFAvatarImageView.swift in Sources */,
 				888F29F023C567110018170E /* Follower.swift in Sources */,
 				88FDBA8423C0928D003219BE /* FavoritesListViewController.swift in Sources */,
 				88BA24A323C4CFB900FB9F9C /* UIViewController+Ext.swift in Sources */,
@@ -245,6 +260,7 @@
 				88DC268623C518C900C1FDDF /* GFAlertContanierView.swift in Sources */,
 				88A563E323C07EE600829393 /* AppDelegate.swift in Sources */,
 				888F29F223C567CE0018170E /* User.swift in Sources */,
+				888F29FB23C5AE030018170E /* FollowerCell.swift in Sources */,
 				88BA24A123C4C49C00FB9F9C /* GFAlertViewController.swift in Sources */,
 				88FDBA8223C09239003219BE /* SearchViewController.swift in Sources */,
 				88BA249D23C4C1E000FB9F9C /* GFTitleLabel.swift in Sources */,
