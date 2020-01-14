@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		880E38F123C64898006FAAE1 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880E38F023C64898006FAAE1 /* AppConstants.swift */; };
+		883C150023CE30AF00DD9893 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C14FF23CE30AF00DD9893 /* UserInfoViewController.swift */; };
 		888F29F023C567110018170E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29EF23C567110018170E /* Follower.swift */; };
 		888F29F223C567CE0018170E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F123C567CE0018170E /* User.swift */; };
 		888F29F523C593740018170E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F423C593740018170E /* NetworkManager.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		880E38F023C64898006FAAE1 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		883C14FF23CE30AF00DD9893 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		888F29EF23C567110018170E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		888F29F123C567CE0018170E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		888F29F423C593740018170E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				88FDBA8123C09239003219BE /* SearchViewController.swift */,
 				88C226AD23C496F30052D95E /* FollowerListViewController.swift */,
 				88FDBA8323C0928D003219BE /* FavoritesListViewController.swift */,
+				883C14FF23CE30AF00DD9893 /* UserInfoViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				888F29FD23C5AE850018170E /* GFAvatarImageView.swift in Sources */,
 				888F2A0223C5D2030018170E /* UIHelper.swift in Sources */,
 				880E38F123C64898006FAAE1 /* AppConstants.swift in Sources */,
+				883C150023CE30AF00DD9893 /* UserInfoViewController.swift in Sources */,
 				888F29F023C567110018170E /* Follower.swift in Sources */,
 				88FDBA8423C0928D003219BE /* FavoritesListViewController.swift in Sources */,
 				88BA24A323C4CFB900FB9F9C /* UIViewController+Ext.swift in Sources */,
