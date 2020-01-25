@@ -71,13 +71,13 @@ private extension GFUserInfoHeaderViewController {
         
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.Constraints.padding),
-            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Constraints.padding),
+            avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             avatarImageView.widthAnchor.constraint(equalToConstant: Constants.Size.avatarImageSide),
             avatarImageView.heightAnchor.constraint(equalToConstant: Constants.Size.avatarImageSide),
             
             usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: Constants.Constraints.textImagePadding),
-            usernameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Constraints.padding),
+            usernameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             usernameLabel.heightAnchor.constraint(equalToConstant: Constants.Constraints.userNameLabelHeight),
             
             nameLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor, constant: 8),
@@ -92,12 +92,12 @@ private extension GFUserInfoHeaderViewController {
             
             locationLabel.centerYAnchor.constraint(equalTo: locationImageView.centerYAnchor),
             locationLabel.leadingAnchor.constraint(equalTo: locationImageView.trailingAnchor, constant: 5),
-            locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Constraints.padding),
+            locationLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             locationLabel.heightAnchor.constraint(equalToConstant: Constants.Constraints.locationImageViewHeight),
             
             bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: Constants.Constraints.textImagePadding),
             bioLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
-            bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Constraints.padding),
+            bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bioLabel.heightAnchor.constraint(equalToConstant: Constants.Constraints.bioLabelHeight)
         ])
     }
