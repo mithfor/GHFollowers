@@ -31,6 +31,7 @@ class GFItemInfoView: UIView {
     }
     
     // MARK: - Public methods
+    
     func set(itemInfoType: ItemInfoType, withCount count: Int) {
         switch itemInfoType {
         case .repos:
