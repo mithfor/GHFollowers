@@ -59,7 +59,8 @@ private extension GFUserInfoHeaderViewController {
             usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: Constants.Constraints.textImagePadding),
             usernameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Constraints.padding),
-            usernameLabel.heightAnchor.constraint(equalToConstant: Constants.userNameLabelHeight)
+            usernameLabel.heightAnchor.constraint(equalToConstant: Constants.userNameLabelHeight),
+            
             
         ])
     }
