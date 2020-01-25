@@ -19,7 +19,7 @@ class GFUserInfoHeaderViewController: UIViewController {
     
     var subviews: [UIView]?
     
-    var user: User?
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,9 @@ class GFUserInfoHeaderViewController: UIViewController {
                     locationImageView,
                     locationLabel,
                     bioLabel]
-    
+
+        addSubViews()
+        layoutUI()
         configureUIElements()
     }
     
@@ -47,12 +49,20 @@ class GFUserInfoHeaderViewController: UIViewController {
 private extension GFUserInfoHeaderViewController {
     
     func configureUIElements() {
-        addSubViews()
-        layoutUI()
+        avatarImageView.downloadImage(from: user.avatarUrl ?? "")
+        usernameLabel.text          = user.login
+        nameLabel.text              = user.name ?? "Name"
+        locationLabel.text          = user.location ?? "No location"
+        locationImageView.image     = UIImage(named: SFSymbols.location)
+        bioLabel.text               = user.bio ?? "No bio available"
+        bioLabel.numberOfLines      = 3
+        
+        locationImageView.image     = UIImage(systemName: SFSymbols.location)
+        locationImageView.tintColor = .secondaryLabel
     }
     
     func addSubViews() {
-        subviews?.forEach { view in view.addSubview(view) }
+        subviews?.forEach { aView in view.addSubview(aView) }
     }
     
     func layoutUI() {
