@@ -53,7 +53,7 @@ private extension GFUserInfoHeaderViewController {
         usernameLabel.text          = user.login
         nameLabel.text              = user.name ?? "Name"
         locationLabel.text          = user.location ?? "No location"
-        locationImageView.image     = UIImage(named: SFSymbols.location)
+        locationImageView.image     = UIImage(named: "🏕")
         bioLabel.text               = user.bio ?? "No bio available"
         bioLabel.numberOfLines      = 3
         
