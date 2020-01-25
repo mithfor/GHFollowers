@@ -11,17 +11,26 @@ import UIKit
 class GFUserInfoHeaderViewController: UIViewController {
 
     let avatarImageView     = GFAvatarImageView(frame: .zero)
-    let usernameLabel       = GFTitleLabel(textAlignment: .left, fontSize: Constants.userNameLabelHeight)
-    let nameLabel           = GFSecondaryTitleLabel(fontSize: 18)
+    let usernameLabel       = GFTitleLabel(textAlignment: .left, fontSize: Constants.Constraints.userNameTextHeight)
+    let nameLabel           = GFSecondaryTitleLabel(fontSize: Constants.Size.secondaryTitleLabelText)
     let locationImageView   = UIImageView()
     let locationLabel       = GFSecondaryTitleLabel(fontSize: 18)
     let bioLabel            = GFBodyLabel(textAlignment: .left)
+    
+    var subviews: [UIView]?
     
     var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        subviews = [avatarImageView,
+                    usernameLabel,
+                    nameLabel,
+                    locationImageView,
+                    locationLabel,
+                    bioLabel]
+    
         configureUIElements()
     }
     
@@ -37,14 +46,13 @@ class GFUserInfoHeaderViewController: UIViewController {
 
 private extension GFUserInfoHeaderViewController {
     
-    // TODO: - make FOR loop
+    func configureUIElements() {
+        addSubViews()
+        layoutUI()
+    }
+    
     func addSubViews() {
-        view.addSubview(avatarImageView)
-        view.addSubview(usernameLabel)
-        view.addSubview(nameLabel)
-        view.addSubview(locationImageView)
-        view.addSubview(locationLabel)
-        view.addSubview(bioLabel)
+        subviews?.forEach { view in view.addSubview(view) }
     }
     
     func layoutUI() {
@@ -54,17 +62,17 @@ private extension GFUserInfoHeaderViewController {
         NSLayoutConstraint.activate([
             avatarImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.Constraints.padding),
             avatarImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.Constraints.padding),
-            avatarImageView.widthAnchor.constraint(equalToConstant: Constants.Constraints.avatarImageSideSize),
-            avatarImageView.heightAnchor.constraint(equalToConstant: Constants.Constraints.avatarImageSideSize),
+            avatarImageView.widthAnchor.constraint(equalToConstant: Constants.Size.avatarImageSide),
+            avatarImageView.heightAnchor.constraint(equalToConstant: Constants.Size.avatarImageSide),
             
             usernameLabel.topAnchor.constraint(equalTo: avatarImageView.topAnchor),
             usernameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: Constants.Constraints.textImagePadding),
             usernameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Constraints.padding),
-            usernameLabel.heightAnchor.constraint(equalToConstant: Constants.userNameLabelHeight),
+            usernameLabel.heightAnchor.constraint(equalToConstant: Constants.Constraints.userNameLabelHeight),
             
             nameLabel.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor, constant: 8),
             nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: Constants.Constraints.textImagePadding),
-            nameLabel.heightAnchor.constraint(equalToConstant: Constants.userLabelHeight),
+            nameLabel.heightAnchor.constraint(equalToConstant: Constants.Constraints.userLabelHeight),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Constraints.padding),
             
             locationImageView.bottomAnchor.constraint(equalTo: avatarImageView.bottomAnchor),
@@ -80,7 +88,7 @@ private extension GFUserInfoHeaderViewController {
             bioLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: Constants.Constraints.textImagePadding),
             bioLabel.leadingAnchor.constraint(equalTo: avatarImageView.leadingAnchor),
             bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.Constraints.padding),
-            bioLabel.heightAnchor.constraint(equalToConstant: 60)
+            bioLabel.heightAnchor.constraint(equalToConstant: Constants.Constraints.bioLabelHeight)
         ])
     }
 }
@@ -88,14 +96,19 @@ private extension GFUserInfoHeaderViewController {
 private extension GFUserInfoHeaderViewController {
     enum Constants{
         enum Constraints {
-            static let avatarImageSideSize: CGFloat             = 90
-            static let padding: CGFloat                         = 20
-            static let textImagePadding: CGFloat                = 12
-            static let locationImageViewWidth: CGFloat          = 20
-            static let locationImageViewHeight:CGFloat          = 20
+            static let padding: CGFloat                 = 20
+            static let textImagePadding: CGFloat        = 12
+            static let locationImageViewWidth: CGFloat  = 20
+            static let locationImageViewHeight:CGFloat  = 20
+            static let userNameTextHeight: CGFloat      = 34
+            static let userNameLabelHeight:CGFloat      = 38
+            static let userLabelHeight: CGFloat         = 20
+            static let bioLabelHeight: CGFloat          = 60
         }
-        static let userNameTextHeight: CGFloat                  = 34
-        static let userNameLabelHeight:CGFloat                  = 38
-        static let userLabelHeight: CGFloat                     = 20
+        
+        enum Size {
+            static let avatarImageSide: CGFloat         = 90
+            static let secondaryTitleLabelText: CGFloat = 18
+        }
     }
 }
