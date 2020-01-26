@@ -14,6 +14,10 @@ class GFFollowerItemViewController: GFItemInfoViewController {
         
         configureItems()
     }
+    
+    override func actionButtonTapped() {
+        delegate?.didTapGetFollowers(for: user!)
+    }
 }
 
 private extension GFFollowerItemViewController {

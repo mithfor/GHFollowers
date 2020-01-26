@@ -14,6 +14,10 @@ class GFRepoItemViewController: GFItemInfoViewController {
         
         configureItems()
     }
+    
+    override func actionButtonTapped() {
+        delegate?.didTapGitHubProfile(for: user!)
+    }
 }
 
 private extension GFRepoItemViewController {

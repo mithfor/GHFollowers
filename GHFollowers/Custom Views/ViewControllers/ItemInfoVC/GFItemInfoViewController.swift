@@ -16,7 +16,9 @@ class GFItemInfoViewController: UIViewController {
     let itemInfoViewOne = GFItemInfoView()
     let itemInfoViewTwo = GFItemInfoView()
     let actionButton = GFButton()
+    
     var user: User?
+    weak var delegate: UserInfoViewControllerDelegate?
     
     // MARK: - Inits
     
@@ -33,16 +35,27 @@ class GFItemInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configureActionButton()
         configurateBackGroundView()
         layoutUI()
         configureStackView()
     }
+    
+    // MARK: - Actions
+    
+    @objc func actionButtonTapped() {}
 }
 
     // MARK: - Private methods
 
 private extension GFItemInfoViewController {
+    
+    func configureActionButton() {
+        actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
+    }
+    
+    
+    
     func configurateBackGroundView() {
         view.layer.cornerRadius = Constants.actionButtonCornerRadius
         view.backgroundColor = .secondarySystemBackground
