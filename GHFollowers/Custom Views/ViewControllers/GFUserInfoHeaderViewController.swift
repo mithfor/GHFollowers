@@ -51,9 +51,8 @@ private extension GFUserInfoHeaderViewController {
     func configureUIElements() {
         avatarImageView.downloadImage(from: user.avatarUrl ?? "")
         usernameLabel.text          = user.login
-        nameLabel.text              = user.name ?? "Name"
+        nameLabel.text              = user.name ?? "No name available"
         locationLabel.text          = user.location ?? "No location"
-        locationImageView.image     = UIImage(named: "🏕")
         bioLabel.text               = user.bio ?? "No bio available"
         bioLabel.numberOfLines      = 3
         

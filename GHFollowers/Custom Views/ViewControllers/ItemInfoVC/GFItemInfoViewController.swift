@@ -16,6 +16,18 @@ class GFItemInfoViewController: UIViewController {
     let itemInfoViewOne = GFItemInfoView()
     let itemInfoViewTwo = GFItemInfoView()
     let actionButton = GFButton()
+    var user: User?
+    
+    // MARK: - Inits
+    
+    init(user: User) {
+        super.init(nibName: nil, bundle: nil)
+        self.user = user
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     
@@ -32,7 +44,7 @@ class GFItemInfoViewController: UIViewController {
 
 private extension GFItemInfoViewController {
     func configurateBackGroundView() {
-        view.layer.cornerRadius = 18
+        view.layer.cornerRadius = Constants.actionButtonCornerRadius
         view.backgroundColor = .secondarySystemBackground
     }
     
@@ -72,5 +84,7 @@ private extension GFItemInfoViewController {
             static let stackViewHeight: CGFloat = 50
             static let actionButtonHeight: CGFloat = 44
         }
+        
+        static let actionButtonCornerRadius: CGFloat = 18
     }
 }

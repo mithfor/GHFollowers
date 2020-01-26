@@ -41,9 +41,6 @@ private extension UserInfoViewController {
             ])
         }
         
-        itemViewOne.backgroundColor = .systemPink
-        itemViewTwo.backgroundColor = .systemBlue
-        
         NSLayoutConstraint.activate([
             headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             headerView.heightAnchor.constraint(equalToConstant: Constants.headerViewHeight),
@@ -81,6 +78,8 @@ private extension UserInfoViewController {
             case .success(let user):
                 DispatchQueue.main.async {
                     self.add(childViewController: GFUserInfoHeaderViewController(user: user), to: self.headerView)
+                    self.add(childViewController: GFRepoItemViewController(user: user), to: self.itemViewOne)
+                    self.add(childViewController: GFFollowerItemViewController(user: user), to: self.itemViewTwo)
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
