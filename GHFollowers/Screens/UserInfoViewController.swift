@@ -10,9 +10,10 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
 
-    let headerView   = UIView()
-    let itemViewOne  = UIView()
-    let itemViewTwo  = UIView()
+    let headerView          = UIView()
+    let itemViewOne         = UIView()
+    let itemViewTwo         = UIView()
+    let dateLabel           = GFBodyLabel(textAlignment: .center)
     var itemViews: [UIView] = []
     
     var username: String!
@@ -29,7 +30,7 @@ class UserInfoViewController: UIViewController {
 private extension UserInfoViewController {
     func layoutUI() {
         
-        itemViews = [headerView, itemViewOne, itemViewTwo]
+        itemViews = [headerView, itemViewOne, itemViewTwo, dateLabel]
         
         itemViews.forEach { aView in
             view.addSubview(aView)
@@ -50,6 +51,10 @@ private extension UserInfoViewController {
             
             itemViewTwo.topAnchor.constraint(equalTo: itemViewOne.bottomAnchor, constant: Constants.padding),
             itemViewTwo.heightAnchor.constraint(equalToConstant: Constants.itemHeight),
+            
+            dateLabel.topAnchor.constraint(equalTo: itemViewTwo.bottomAnchor, constant: Constants.padding),
+            dateLabel.heightAnchor.constraint(equalToConstant: 18)
+            
         ])
     }
     
@@ -80,6 +85,7 @@ private extension UserInfoViewController {
                     self.add(childViewController: GFUserInfoHeaderViewController(user: user), to: self.headerView)
                     self.add(childViewController: GFRepoItemViewController(user: user), to: self.itemViewOne)
                     self.add(childViewController: GFFollowerItemViewController(user: user), to: self.itemViewTwo)
+                    self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat)"
                 }
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "Something went wrong", message: error.rawValue, buttonTitle: "Ok")
