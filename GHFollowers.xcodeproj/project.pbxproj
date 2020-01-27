@@ -11,6 +11,7 @@
 		883C150023CE30AF00DD9893 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883C14FF23CE30AF00DD9893 /* UserInfoViewController.swift */; };
 		88419D0823DD90EC00E732F6 /* GFRepoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88419D0723DD90EC00E732F6 /* GFRepoItemViewController.swift */; };
 		88419D0A23DD941500E732F6 /* GFFollowerItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88419D0923DD941500E732F6 /* GFFollowerItemViewController.swift */; };
+		884C5C0623DF62E100A123B7 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C5C0523DF62E100A123B7 /* PersistenceManager.swift */; };
 		884DBB1723DDB5C6002BE3A4 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884DBB1623DDB5C6002BE3A4 /* Date+Ext.swift */; };
 		88570F5A23DDFE4200202A4C /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88570F5923DDFE4200202A4C /* String+Ext.swift */; };
 		888F29F023C567110018170E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29EF23C567110018170E /* Follower.swift */; };
@@ -47,6 +48,7 @@
 		883C14FF23CE30AF00DD9893 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		88419D0723DD90EC00E732F6 /* GFRepoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemViewController.swift; sourceTree = "<group>"; };
 		88419D0923DD941500E732F6 /* GFFollowerItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemViewController.swift; sourceTree = "<group>"; };
+		884C5C0523DF62E100A123B7 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		884DBB1623DDB5C6002BE3A4 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		88570F5923DDFE4200202A4C /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		888F29EF23C567110018170E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				888F29F423C593740018170E /* NetworkManager.swift */,
+				884C5C0523DF62E100A123B7 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				88BA24A323C4CFB900FB9F9C /* UIViewController+Ext.swift in Sources */,
 				888F29F523C593740018170E /* NetworkManager.swift in Sources */,
 				88C226A623C47D400052D95E /* GFButton.swift in Sources */,
+				884C5C0623DF62E100A123B7 /* PersistenceManager.swift in Sources */,
 				88419D0A23DD941500E732F6 /* GFFollowerItemViewController.swift in Sources */,
 				88DC268623C518C900C1FDDF /* GFAlertContanierView.swift in Sources */,
 				88419D0823DD90EC00E732F6 /* GFRepoItemViewController.swift in Sources */,

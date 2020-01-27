@@ -58,6 +58,9 @@ class FollowerListViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self,
                                 forCellWithReuseIdentifier: FollowerCell.reuseId)
+        
+        let addbutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addbutton
     }
     
     func configureSearchController() {
@@ -117,6 +120,10 @@ class FollowerListViewController: UIViewController {
         DispatchQueue.main.async {
             self.dataSource.apply(snapshot, animatingDifferences: true)
         }
+    }
+    
+    @objc private func addButtonTapped() {
+        
     }
 }
 
