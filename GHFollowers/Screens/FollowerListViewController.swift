@@ -44,12 +44,15 @@ class FollowerListViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    private func configureViewController() {
+    func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let addbutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addbutton
     }
     
-    private func configureCollectionView() {
+    func configureCollectionView() {
         collectionView = UICollectionView(frame: view.bounds,
                                           collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         collectionView.delegate = self
@@ -58,9 +61,6 @@ class FollowerListViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self,
                                 forCellWithReuseIdentifier: FollowerCell.reuseId)
-        
-        let addbutton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        navigationItem.rightBarButtonItem = addbutton
     }
     
     func configureSearchController() {
