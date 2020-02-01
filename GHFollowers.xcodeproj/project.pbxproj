@@ -14,8 +14,8 @@
 		8848684A23E21867006AC675 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8848684923E21867006AC675 /* FavoriteCell.swift */; };
 		884C5C0623DF62E100A123B7 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C5C0523DF62E100A123B7 /* PersistenceManager.swift */; };
 		884DBB1723DDB5C6002BE3A4 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884DBB1623DDB5C6002BE3A4 /* Date+Ext.swift */; };
-		88570F5A23DDFE4200202A4C /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88570F5923DDFE4200202A4C /* String+Ext.swift */; };
 		888AFED423E5C75000151F06 /* GFTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888AFED323E5C75000151F06 /* GFTabBarController.swift */; };
+		888AFED623E5EBF500151F06 /* GFDataLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888AFED523E5EBF500151F06 /* GFDataLoadingViewController.swift */; };
 		888F29F023C567110018170E /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29EF23C567110018170E /* Follower.swift */; };
 		888F29F223C567CE0018170E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F123C567CE0018170E /* User.swift */; };
 		888F29F523C593740018170E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F29F423C593740018170E /* NetworkManager.swift */; };
@@ -53,8 +53,8 @@
 		8848684923E21867006AC675 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		884C5C0523DF62E100A123B7 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		884DBB1623DDB5C6002BE3A4 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
-		88570F5923DDFE4200202A4C /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		888AFED323E5C75000151F06 /* GFTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabBarController.swift; sourceTree = "<group>"; };
+		888AFED523E5EBF500151F06 /* GFDataLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingViewController.swift; sourceTree = "<group>"; };
 		888F29EF23C567110018170E /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		888F29F123C567CE0018170E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		888F29F423C593740018170E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -188,7 +188,6 @@
 			children = (
 				88BA24A223C4CFB900FB9F9C /* UIViewController+Ext.swift */,
 				884DBB1623DDB5C6002BE3A4 /* Date+Ext.swift */,
-				88570F5923DDFE4200202A4C /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,6 +272,7 @@
 				88DB719923DC1974005B02D8 /* GFUserInfoHeaderViewController.swift */,
 				88BA24A023C4C49C00FB9F9C /* GFAlertViewController.swift */,
 				88419D0B23DD949F00E732F6 /* ItemInfoVC */,
+				888AFED523E5EBF500151F06 /* GFDataLoadingViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -363,9 +363,9 @@
 				880E38F123C64898006FAAE1 /* AppConstants.swift in Sources */,
 				883C150023CE30AF00DD9893 /* UserInfoViewController.swift in Sources */,
 				888F29F023C567110018170E /* Follower.swift in Sources */,
-				88570F5A23DDFE4200202A4C /* String+Ext.swift in Sources */,
 				88A86BAD23DCCD9000EB5A06 /* GFItemInfoView.swift in Sources */,
 				884DBB1723DDB5C6002BE3A4 /* Date+Ext.swift in Sources */,
+				888AFED623E5EBF500151F06 /* GFDataLoadingViewController.swift in Sources */,
 				88FDBA8423C0928D003219BE /* FavoritesListViewController.swift in Sources */,
 				88BA24A323C4CFB900FB9F9C /* UIViewController+Ext.swift in Sources */,
 				888F29F523C593740018170E /* NetworkManager.swift in Sources */,

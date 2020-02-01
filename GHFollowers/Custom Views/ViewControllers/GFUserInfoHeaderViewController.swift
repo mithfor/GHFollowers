@@ -47,9 +47,10 @@ class GFUserInfoHeaderViewController: UIViewController {
 }
 
 private extension GFUserInfoHeaderViewController {
-    
+
     func configureUIElements() {
-        avatarImageView.downloadImage(from: user.avatarUrl ?? "")
+        downLoadAvatarImage()
+        
         usernameLabel.text          = user.login
         nameLabel.text              = user.name ?? "No name available"
         locationLabel.text          = user.location ?? "No location"
@@ -99,6 +100,14 @@ private extension GFUserInfoHeaderViewController {
             bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bioLabel.heightAnchor.constraint(equalToConstant: Constants.Constraints.bioLabelHeight)
         ])
+    }
+    
+    
+    func downLoadAvatarImage() {
+        NetworkManager.shared.downLoadImage(from: user.avatarUrl ?? "") { [weak self] image in
+            guard let self = self else { return }
+            DispatchQueue.main.async { self.avatarImageView.image = image }
+        }
     }
 }
 

@@ -80,8 +80,9 @@ class NetworkManager {
               }
               
               do {
-                  let decoder = JSONDecoder()
-                  let user = try decoder.decode(User.self, from: data)
+                  let decoder                 = JSONDecoder()
+                decoder.dateDecodingStrategy  = .iso8601
+                  let user                    = try decoder.decode(User.self, from: data)
                   completed(.success(user))
               } catch {
                   completed(.failure(.invalidData))
@@ -90,4 +91,34 @@ class NetworkManager {
           
           task.resume()
       }
+    
+    func downLoadImage(from urlString: String, completed: @escaping (UIImage?) -> Void) {
+        let cacheKey = NSString(string: urlString)
+        
+        if let image  = cache.object(forKey: cacheKey) {
+            completed(image)
+        }
+        
+        guard let url = URL(string: urlString) else {
+            completed(nil)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+            guard let self = self,
+                error == nil,
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200,
+                let data = data,
+                let image = UIImage(data: data) else {
+                    completed(nil)
+                    return
+                }   
+            
+            self.cache.setObject(image, forKey: cacheKey)
+            completed(image)
+        }
+        
+        task.resume()
+    }
 }

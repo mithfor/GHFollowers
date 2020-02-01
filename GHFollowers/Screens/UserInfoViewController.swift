@@ -108,7 +108,7 @@ private extension UserInfoViewController {
         
         self.add(childViewController: repoItemVC, to: self.itemViewOne)
         self.add(childViewController: followerItemVC, to: self.itemViewTwo)
-        self.dateLabel.text = "GitHub since \(user.createdAt.convertToDisplayFormat())"
+        self.dateLabel.text = "GitHub since \(user.createdAt.convertToMonthYearFormat())"
     }
 }
 

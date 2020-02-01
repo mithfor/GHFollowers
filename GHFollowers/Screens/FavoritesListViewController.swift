@@ -8,10 +8,10 @@
 
 import UIKit
 
-class FavoritesListViewController: UIViewController {
+class FavoritesListViewController: GFDataLoadingViewController {
 
     let tableView               = UITableView()
-    var favorites: [Follower]       = []
+    var favorites: [Follower]   = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
