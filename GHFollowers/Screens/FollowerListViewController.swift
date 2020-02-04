@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol FollowersListViewControllerDelegate: class {
-    func didRequestUser(for username: String)
-}
 
 class FollowerListViewController: GFDataLoadingViewController {
     
@@ -185,7 +182,7 @@ private extension FollowerListViewController {
 
 // MARK: - FollowersListViewControllerDelegate
 
-extension FollowerListViewController: FollowersListViewControllerDelegate {
+extension FollowerListViewController: UserInfoViewControllerDelegate {
     func didRequestUser(for username: String) {
         self.username   = username
         title           = username

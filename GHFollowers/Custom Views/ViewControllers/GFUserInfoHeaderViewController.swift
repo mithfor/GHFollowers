@@ -23,15 +23,14 @@ class GFUserInfoHeaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        subviews = [avatarImageView,
-                    usernameLabel,
-                    nameLabel,
-                    locationImageView,
-                    locationLabel,
-                    bioLabel]
-
-        addSubViews()
+        
+        view.addSubviews(avatarImageView,
+                         usernameLabel,
+                         nameLabel,
+                         locationImageView,
+                         locationLabel,
+                         bioLabel)
+        
         layoutUI()
         configureUIElements()
     }
@@ -59,10 +58,6 @@ private extension GFUserInfoHeaderViewController {
         
         locationImageView.image     = SFSymbols.location
         locationImageView.tintColor = .secondaryLabel
-    }
-    
-    func addSubViews() {
-        subviews?.forEach { aView in view.addSubview(aView) }
     }
     
     func layoutUI() {
@@ -121,7 +116,7 @@ private extension GFUserInfoHeaderViewController {
             static let userNameTextHeight: CGFloat      = 34
             static let userNameLabelHeight:CGFloat      = 38
             static let userLabelHeight: CGFloat         = 20
-            static let bioLabelHeight: CGFloat          = 60
+            static let bioLabelHeight: CGFloat          = 90
         }
         
         enum Size {
