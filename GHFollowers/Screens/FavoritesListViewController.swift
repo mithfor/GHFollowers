@@ -25,8 +25,6 @@ class FavoritesListViewController: GFDataLoadingViewController {
         getFavorities()
     }
     
-
-    
     func configureViewContoller() {
         view.backgroundColor = .systemBackground
         title = "Favorities"
@@ -40,18 +38,20 @@ class FavoritesListViewController: GFDataLoadingViewController {
         tableView.rowHeight = 80
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.removeExcessCells()
         
         tableView.register(FavoriteCell.self, forCellReuseIdentifier: FavoriteCell.reuseId)
     }
     
     func getFavorities() {
-        PersitenceManager.retrieveFavorites { [weak self] result in
+        PersistenceManager.retrieveFavorites { [weak self] result in
             switch result {
             case .success(let favorites):
                 if favorites.isEmpty {
                     self?.showEmptySpaceView(with: "No favorities? \nAddfucking one on the follower screen", in: self?.view ?? UIView())
                 } else {
                     self?.favorites = favorites
+                    self?.tableView.reloadDataOnMainThread()
                     DispatchQueue.main.async {
                         self?.tableView.reloadData()
                         self?.view.bringSubviewToFront(self?.tableView ?? UITableView())
@@ -93,14 +93,12 @@ extension FavoritesListViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         guard editingStyle == .delete else { return }
         
-        let favorite = favorites[indexPath.row]
-        
-        favorites.remove(at: indexPath.row)
-        
-        tableView.deleteRows(at: [indexPath], with: .left)
-        
-        PersitenceManager.updateWith(favorite: favorite, actionType: .remove) { [weak self] error in
-            guard let error = error else { return }
+        PersistenceManager.updateWith(favorite: favorites[indexPath.row], actionType: .remove) { [weak self] error in
+            guard let error = error else {
+                self?.favorites.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .left)
+                return
+            }
             
             self?.presentGFAlertOnMainThread(title: "Unable to remove", message: error.rawValue, buttonTitle: "Ok")
         }
