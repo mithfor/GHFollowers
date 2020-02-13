@@ -140,8 +140,8 @@
 		888F29F623C5A6070018170E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				888F29F723C5A61B0018170E /* GFError.swift */,
 				888F2A0123C5D2030018170E /* UIHelper.swift */,
+				888F29F723C5A61B0018170E /* GFError.swift */,
 				88DB719D23DC4A42005B02D8 /* Constants.swift */,
 			);
 			path = Utilities;

@@ -47,21 +47,25 @@ class FavoritesListViewController: GFDataLoadingViewController {
         PersistenceManager.retrieveFavorites { [weak self] result in
             switch result {
             case .success(let favorites):
-                if favorites.isEmpty {
-                    self?.showEmptySpaceView(with: "No favorities? \nAddfucking one on the follower screen", in: self?.view ?? UIView())
-                } else {
-                    self?.favorites = favorites
-                    self?.tableView.reloadDataOnMainThread()
-                    DispatchQueue.main.async {
-                        self?.tableView.reloadData()
-                        self?.view.bringSubviewToFront(self?.tableView ?? UITableView())
-                    }
-                }
-                self?.favorites = favorites
+                self?.updateUI(with: favorites)
             case .failure(let error):
                 self?.presentGFAlertOnMainThread(title: "Somethings went wrong", message: error.rawValue, buttonTitle: "Ok")
             }
         }
+    }
+    
+    func updateUI(with favorites: [Follower]) {
+            if favorites.isEmpty {
+                self.showEmptySpaceView(with: "No favorities? \nAddfucking one on the follower screen", in: self.view ?? UIView())
+        } else {
+                self.favorites = favorites
+                self.tableView.reloadDataOnMainThread()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.view.bringSubviewToFront(self.tableView )
+            }
+        }
+        self.favorites = favorites
     }
 }
 

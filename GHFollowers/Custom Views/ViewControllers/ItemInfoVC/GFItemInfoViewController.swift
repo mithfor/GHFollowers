@@ -58,11 +58,9 @@ private extension GFItemInfoViewController {
         actionButton.addTarget(self, action: #selector(actionButtonTapped), for: .touchUpInside)
     }
     
-    
-    
     func configurateBackGroundView() {
         view.layer.cornerRadius = Constants.actionButtonCornerRadius
-        view.backgroundColor = .secondarySystemBackground
+        view.backgroundColor        = .secondarySystemBackground
     }
     
     func configureStackView() {
@@ -97,9 +95,9 @@ private extension GFItemInfoViewController {
 private extension GFItemInfoViewController {
     enum Constants {
         enum Constraints {
-            static let padding: CGFloat = 20
-            static let stackViewHeight: CGFloat = 50
-            static let actionButtonHeight: CGFloat = 44
+            static let padding: CGFloat             = 20
+            static let stackViewHeight: CGFloat     = 50
+            static let actionButtonHeight:  CGFloat = 44
         }
         
         static let actionButtonCornerRadius: CGFloat = 18

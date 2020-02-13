@@ -10,6 +10,8 @@ import UIKit
 
 class GFUserInfoHeaderViewController: UIViewController {
 
+    //MARK: - Public vars
+    
     let avatarImageView     = GFAvatarImageView(frame: .zero)
     let usernameLabel       = GFTitleLabel(textAlignment: .left, fontSize: Constants.Constraints.userNameTextHeight)
     let nameLabel           = GFSecondaryTitleLabel(fontSize: Constants.Size.secondaryTitleLabelText)
@@ -20,6 +22,8 @@ class GFUserInfoHeaderViewController: UIViewController {
     var subviews: [UIView]?
     
     var user: User!
+    
+    // MARK: - lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +39,8 @@ class GFUserInfoHeaderViewController: UIViewController {
         configureUIElements()
     }
     
+    //MARK: - Inits
+    
     init(user: User) {
         super.init(nibName: nil, bundle: nil)
         self.user = user
@@ -45,10 +51,12 @@ class GFUserInfoHeaderViewController: UIViewController {
     }
 }
 
+// MARK: - Private
+
 private extension GFUserInfoHeaderViewController {
 
     func configureUIElements() {
-        downLoadAvatarImage()
+        avatarImageView.downloadImage(fromURL: user.avatarUrl ?? "")
         
         usernameLabel.text          = user.login
         nameLabel.text              = user.name ?? "No name available"
@@ -98,13 +106,10 @@ private extension GFUserInfoHeaderViewController {
     }
     
     
-    func downLoadAvatarImage() {
-        NetworkManager.shared.downLoadImage(from: user.avatarUrl ?? "") { [weak self] image in
-            guard let self = self else { return }
-            DispatchQueue.main.async { self.avatarImageView.image = image }
-        }
-    }
+
 }
+
+    // MARK: - Constants
 
 private extension GFUserInfoHeaderViewController {
     enum Constants{

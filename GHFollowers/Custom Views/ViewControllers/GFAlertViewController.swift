@@ -10,6 +10,8 @@ import UIKit
 
 class GFAlertViewController: UIViewController {
     
+    // MARK: - Public vars
+    
     let containerView   = GFAlertContanierView()
     let titleLabel      = GFTitleLabel(textAlignment: .center, fontSize: 20)
     let messageLabel    = GFBodyLabel(textAlignment: .center)
@@ -20,6 +22,8 @@ class GFAlertViewController: UIViewController {
     var buttonTitle: String?
     
     let padding: CGFloat = 20
+    
+    //MARK: - Inits
     
     init(title: String, message: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
@@ -32,19 +36,31 @@ class GFAlertViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
         view.addSubviews(containerView,
                          titleLabel,
                          actionButton,
                          messageLabel)
+
         configureContainerView()
         configureTitleLabel()
         configureActionButton()
         configureMessageLabel()
     }
     
+    @objc func dismissVC() {
+        dismiss(animated: true)
+    }
+    
+}
+
+    // MARK: - Private methods
+private extension GFAlertViewController {
     func configureContainerView() {
         NSLayoutConstraint.activate([
             containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -90,9 +106,4 @@ class GFAlertViewController: UIViewController {
             messageLabel.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -12)
         ])
     }
-    
-    @objc func dismissVC() {
-        dismiss(animated: true)
-    }
-    
 }

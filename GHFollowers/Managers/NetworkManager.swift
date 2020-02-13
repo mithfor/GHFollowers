@@ -9,13 +9,17 @@
 import UIKit
 
 class NetworkManager {
-    static let shared = NetworkManager()
-    let cache = NSCache<NSString, UIImage>()
+    
+    static let shared           = NetworkManager()
+    let cache                   = NSCache<NSString, UIImage>()
     private let baseURL: String = "https://api.github.com/users/"
     
     private init() {}
     
-    func getFollowers(for username: String, page: Int, completed: @escaping (Result<[Follower], GFError>) -> Void) {
+    func getFollowers(for username: String,
+                      page: Int,
+                      completed: @escaping (Result<[Follower], GFError>) -> Void) {
+        
         let endpoint = baseURL + "\(username)/followers?per_page=\(AppConstants.followersOnPage)&page=\(page)"
         
         guard let url = URL(string: endpoint) else {
@@ -53,7 +57,9 @@ class NetworkManager {
         task.resume()
     }
     
-    func getUserInfo(for username: String, completed: @escaping (Result<User, GFError>) -> Void) {
+    func getUserInfo(for username: String,
+                     completed: @escaping (Result<User, GFError>) -> Void) {
+        
           let endpoint = baseURL + "\(username)"
           
           guard let url = URL(string: endpoint) else {
